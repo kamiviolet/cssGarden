@@ -1,0 +1,129 @@
+/* css Zen Garden default style v1.02 */
+/* css released under Creative Commons License - http://creativecommons.org/licenses/by-nc-sa/1.0/  */
+/* Not all elements are defined in this file, so you'll most likely want to refer to the xhtml as well. */
+/* Your images should be linked as if the CSS file sits in the same folder as the images. ie. no paths. */
+
+html {
+  --myColor_black: hsl(0, 0%, 20%);
+  --myColor_white: hsl(225, 100%, 100%);
+  
+  --myColor_darkGreen: hsl(173, 77%, 29%);
+  --myColor_grayBlue: hsla(203, 68%, 72%, 0.616);
+  --myColor_mintGreen: hsl(173, 82%, 92%);
+  --myColor_turquoise: hsla(173, 82%, 80%, 0.637);
+}
+
+* {
+  margin: 0;
+}
+
+body {
+  font-family: Helvetica, sans-serif;
+  line-height: 1.5em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  background-image: linear-gradient(to top, var(--myColor_white), var(--myColor_mintGreen), var(--myColor_darkGreen), var(--myColor_black));
+  background-attachment: fixed;
+  box-sizing: border-box;
+}
+
+h1, h2, h3 {
+  padding-block-end: 1.5em;
+}
+
+.intro, .supporting {
+  inline-size: 50vw;
+  padding-block: 2em;
+  padding-inline: 2em;
+}
+
+.header, .main {
+  padding-block: 0.75em;
+}
+
+:where(.header, .main, .footer) a {
+  text-decoration: none;
+  color: darkorange;
+  text-shadow: black 0 1px;
+}
+
+.section {
+  margin-block: 5em;
+}
+
+.section:last-of-type {
+  margin-block-end: 0;
+}
+
+.intro {
+  background-color: var(--myColor_turquoise);
+}
+
+.banner > *:first-child {
+  font-variant: small-caps;
+  font-size: 3em;
+  font-weight: 100;
+}
+
+.menu {
+  inline-size: 100vw;
+}
+
+.menu ul {
+  display:flex;
+  justify-content: space-evenly;
+}
+
+.menu li {
+  background-color: var(--myColor_turquoise);
+  color: var(--myColor_darkGreen);
+  border-radius: 50%;
+  inline-size: 100px;
+  block-size: 100px;
+  padding: 1em;
+  text-align: center;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  transition: linear 0.5s;
+}
+
+.menu li:hover, 
+.menu li:focus {
+  background-color: var(--myColor_grayBlue);
+  transform: scale(1.25, 1.25);
+}
+
+.supporting {
+  background-color: var(--myColor_grayBlue);
+}
+
+.footer {
+  flex-basis: 100%;
+  background-color: var(--myColor_black);
+  color: var(--myColor_mintGreen);
+  padding-block: 5em;
+  padding-inline: 2em;
+  inline-size: 100vw;
+  display: flex;
+  justify-content: space-around;
+}
+
+footer > .sub-section {
+  border-inline-start: 1px solid black;
+  inline-size: 33%;
+  text-align: center;
+  line-height: 2em;
+}
+
+footer > .sub-section:first-of-type {
+  border: 0;
+}
+
+.list {
+  list-style-type: none;
+  padding-inline-start: 0;
+}
